@@ -3,6 +3,7 @@ import java.util.Scanner;
 import com.sprint1.fms1.model.ScheduleDetails;
 import com.sprint1.fms1.service.ViewDetailsService;
 import com.sprint1.fms1.service.ViewDetailsServiceImpl;
+import com.sprint1.fms1.uitil.InvalidFlightIdException;
 
 public class ViewDetailsUi {
 							static ViewDetailsService view1= new ViewDetailsServiceImpl();
@@ -19,7 +20,12 @@ public static void main(String[] args) {
 	    	case 1:
 	    		System.out.println("Enter the regestered flight id :");
 	    		long id=a.nextLong();
-	    		System.out.println(view1.getFlightDetails(id));
+	    		try {
+					System.out.println(view1.getFlightDetails(id));
+				} catch (InvalidFlightIdException e) {
+					System.out.println("Error : "+e.getMessage());
+					
+				}
 	    		break;
 	    	case 2:
 	    		System.out.println("List of All Flights :");

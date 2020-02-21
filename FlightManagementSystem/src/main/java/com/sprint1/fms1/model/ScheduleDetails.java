@@ -1,7 +1,7 @@
 package com.sprint1.fms1.model;
 public class ScheduleDetails {
 	long id;
-	String source;
+    String source;
 	String destination;
 	float seats;
 	String arrival;
@@ -114,6 +114,10 @@ public class ScheduleDetails {
 			return false;
 		return true;
 	}
+//	public void displayAddDetails() {
+//		System.out.print(=======================================);
+//		
+//	}
 
 
 }
